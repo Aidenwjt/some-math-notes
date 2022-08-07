@@ -8,34 +8,37 @@
 
 \begin{document}
 
-\maketitle
+%\maketitle
 
 \section{Induction Exercises}
 \subsection{}
 Prove that
 \[
-	1^2 + 2^2 + 3^2 + ... + n^2 = \frac{n(n+1)(2n+1)}{6} (*)
+	\sum_{i=0}^{n} i^2 = 1^2 + 2^2 + 3^2 + ... + n^2 = \frac{n(n+1)(2n+1)}{6} (*)
 \]
 \begin{proof}
 	If $n=1$, then
 	\[
-		1(1+1)(2(1)+1) = (2)(3) = 6
+		\sum_{i=0}^{1} i^2 = 1 = \frac{1(1+1)(2+1)}{6}
 	\]
-	which is divisible by 6, making the statement true for $n=1$.
+	thus $(*)$ is true for $n=1$.
 	\newline\newline
-	Assuming the statement is true for $n \leq k$, where $n$ exists in the natural numbers. We then know that
+	Now assume $(*)$ is true for $n = k$, such that
 	\[
-		k(k+1)(2k+1) = 6m, \textrm{ where $m \in \mathbf{N}$,}
+		\sum_{i=0}^{k} i^2 = \frac{k(k+1)(2k+1)}{6}
 	\]
-	and so
+	We then need to prove that $(*)$ is true for $n=k+1$. Adding $(k+1)^2$ to both sides of our assumption gets 
 	\begin{align*}
-		(k+1)(k+2)(2(k+1)+1) & = (k+2)(k+1)((2k+1)+2)\\
-				     & = (k+1)(k(2k+1)+2k+2(2k+1)+4) \\
-				     & = k(k+1)(2k+1)+2k(k+1)(k+(2k+1)+2) \\
-				     & = 6m + 2(k+1)(3k+3) \\
-				     & = 6m + 6(k+1)^2 \\
-				     & = 6(m + (k+1)^2)
-	\end{align*} 
-where the last equation is divisible by 6. Thus, by the principle of mathematical induction, $(*)$ is true for all $n \in \mathbf{N}$.
+		\sum_{i=0}^{k+1} i^2 & = \frac{k(k+1)(2k+1)}{6} + (k+1)^2 \\
+				     & = (k+1) \left[ \frac{k(2k+1)}{6} + (k+1) \right] \\
+				     & = (k+1) \left[ \frac{k(2k+1) + 6(k+1)}{6} \right] \\
+				     & = (k+1) \left[ \frac{2k^2 + k + 6k + 6}{6} \right] \\
+				     & = (k+1) \left[ \frac{2k^2 + 4k + 3k + 6}{6} \right] \\
+				     & = (k+1) \left[ \frac{2k(k+2) + 3(k+2)}{6} \right] \\
+				     & = (k+1) \left[ \frac{(k+2)(2k+3)}{6} \right] \\
+				     & = \frac{(k+1)(k+2)(2k+3)}{6} \\
+				     & = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}
+	\end{align*}
+	where the last equation is the same as $(*)$ with $n=k+1$. Hence by the priniciple of mathematical induction $(*)$ is true for all $n \in \mathbf{N}$.
 \end{proof}
 \end{document}
