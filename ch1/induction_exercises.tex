@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm}
+
+\title{Number Theory Exercises}
+\author{Aiden Taylor}
+\date{August 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Induction Exercises}
+\subsection{}
+Prove that
+\[
+	1^2 + 2^2 + 3^2 + ... + n^2 = \frac{n(n+1)(2n+1)}{6} (*)
+\]
+\begin{proof}
+	If $n=1$, then
+	\[
+		1(1+1)(2(1)+1) = (2)(3) = 6
+	\]
+	which is divisible by 6, making the statement true for $n=1$.
+	\newline\newline
+	Assuming the statement is true for $n \leq k$, where $n$ exists in the natural numbers. We then know that
+	\[
+		k(k+1)(2k+1) = 6m, \textrm{ where $m \in \mathbf{N}$,}
+	\]
+	and so
+	\begin{align*}
+		(k+1)(k+2)(2(k+1)+1) & = (k+2)(k+1)((2k+1)+2)\\
+				     & = (k+1)(k(2k+1)+2k+2(2k+1)+4) \\
+				     & = k(k+1)(2k+1)+2k(k+1)(k+(2k+1)+2) \\
+				     & = 6m + 2(k+1)(3k+3) \\
+				     & = 6m + 6(k+1)^2 \\
+				     & = 6(m + (k+1)^2)
+	\end{align*} 
+where the last equation is divisible by 6. Thus, by the principle of mathematical induction, $(*)$ is true for all $n \in \mathbf{N}$.
+\end{proof}
+\end{document}
