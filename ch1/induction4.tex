@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amsfonts}
+\begin{document}
+\section*{Induction Exercise 4}
+Prove that
+\[
+	\sum_{i=0}^{n} i(i+1) = 1\cdot2 + 2\cdot3 + 3\cdot4 + ... + n(n+1) = \frac{n(n+1)(n+2)}{3}
+\]
+\begin{proof}
+	If $n=1$, then
+	\[
+		\sum_{i=0}^{1} i(i+1) = 2 = \frac{1(2)(3)}{3}.
+	\]
+	Thus the statement is true for $n=1$.
+	\newline\newline
+	Now assuming that
+	\[
+		\sum_{i=0}^{k} i(i+1) = \frac{k(k+1)(k+2)}{3}
+	\]
+	we find that 
+	\begin{align*}
+		\sum_{i=0}^{k+1} i(i+1) & = \left( \sum_{i=0}^{k} i(i+1) \right) + (k+1)((k+1)+1) \\
+				        & = \frac{k(k+1)(k+2)}{3} + (k+1)(k+2) \\
+				        & = \frac{k(k+1)(k+2) + 3(k+1)(k+2)}{3} \\
+				        & = \frac{(k+1)(k+2)(k+3)}{3} \\
+				        & = \frac{(k+1)((k+1)+1)((k+1)+2)}{3}.
+	\end{align*}
+	Hence by the priniciple of mathematical induction we have established that the statement is true for all $n \in \mathbb{N}$.
+\end{proof}
+\end{document}
