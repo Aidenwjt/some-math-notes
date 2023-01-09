@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\setlength{\textwidth}{430pt}\setlength{\oddsidemargin}{11pt}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[bottom=0.9in,top=0.9in]{geometry}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\textbf{Zachmanoglou \& Dale's Intro to PDE's with Applications Exercises}}
+\tableofcontents
+\newpage
+\section{Some Concepts from Calculus and ODE's}
+\subsection{}
+Prove that a closed set contains all of its boundary points while an open set contains none of its boundary points.
+\begin{proof}
+Let $A \subset \mathbb{R}^n$ be a closed set. This implies that $A$ contains all
+of its limit points. Now suppose the point $x \in \mathbb{R}^n$ is a boundary
+point of the set $A$. This implies that every ball with center at $x$ contains
+points
+of $A$ and points of $A^c$. It then follows, from the definition of a limit point,
+that $x$ is itself a limit point of $A$. Then since we know $A$ contains all
+of its limit points then it follows that $x \in A$, as desired. \newline
+\indent Now let $A \subset \mathbb{R}^n$ be an open set. This implies that every
+point of $A$ is an interior point, futher implying that $A$ contains none of its
+limit points. Since we just showed that boundary points are also limit points,
+it must be that $A$ contains none of its boundary points, as desired.
+\end{proof}
+\end{document}
