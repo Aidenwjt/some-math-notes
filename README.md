@@ -1,4 +1,4 @@
-## My math notes, and attempts/solutions to some exercises.
+## Some math notes, and attempts/solutions to some exercises.
 
 ## Notes
 - Nothing yet...
