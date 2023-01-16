@@ -7,6 +7,6 @@
 - Number Theory
     - George E. Andrews' Number Theory
         - 1.1.1, 1.1.2, 1.1.4, 1.1.5
-- PDE's
-    - E.C. Zachmanoglou and Dale W. Thoe's Introduction to PDE's with Applications
+- PDEs
+    - E.C. Zachmanoglou and Dale W. Thoe's Introduction to PDEs with Applications
         - 1.1
