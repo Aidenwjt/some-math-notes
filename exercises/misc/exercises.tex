@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\setlength{\textwidth}{430pt}\setlength{\oddsidemargin}{11pt}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[bottom=0.9in,top=0.9in]{geometry}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\textbf{Miscellaneous Exercises}}
+\tableofcontents
+\newpage
+\section{Euclidean Geometry}
+\subsection{Jane Street's 3b1b Puzzler}
+Let $C$ be a closed bounded convex set in $\mathbb{R}^3$, and let $B = \partial C$.
+Now imagine taking every possible pair of points on $B$ and adding them up,
+where we denote the set of these vector sums as $D = \{\vec{p}+\vec{q} \, | \,\vec{p},\vec{q} \in B\}$.
+Prove that $D$ is also a convex set.
+\begin{proof}
+Let $\vec{x},\vec{y} \in D$. This implies that $\vec{x} = \vec{p} + \vec{q}$ and $\vec{y} = \vec{r} + \vec{s}$,
+where $\vec{p},\vec{q},\vec{r},\vec{s} \in B$. It is first important to note that since $C$ is closed, it contains all its boundary points,
+and since $C$ is bounded, the distance between any two boundary points is within the bound
+defined by the distance function $d_C$, say $M \in \mathbb{R}$. Then, since $D$ is just the vector sums of all possible pairs of boundary points in $C$,
+we can find the bound for $d_D$ with our given points in $D$ as follows:
+\begin{equation*}
+d_D(\vec{x},\vec{y}) = |\vec{x} - \vec{y}| = |(\vec{p} + \vec{q}) - (\vec{r} + \vec{s})| \leq |\vec{p} - \vec{r}| + |\vec{q} - \vec{s}| \leq M + M = 2M.
+\end{equation*}
+With this bound, let $\lambda \in \mathbb{R}$, where $0 < \lambda < 1$, and see that
+\begin{align*}
+|(1-\lambda)\vec{x} + \lambda\vec{y}| &= |\vec{x} - \lambda\vec{x} + \lambda\vec{y}| \\
+                                      &= |(\vec{p}+\vec{q}) - \lambda(\vec{p}+\vec{q}) + \lambda(\vec{r} + \vec{s})| \\
+                                      &= |\vec{p} - \lambda\vec{p} + \lambda\vec{r} + \vec{q} - \lambda\vec{q} + \lambda\vec{s}| \\
+                                      &= |((1-\lambda)\vec{p} + \lambda\vec{r}) + ((1-\lambda)\vec{q} + \lambda\vec{s})| \\
+                                      & \leq |(1-\lambda)\vec{p} + \lambda\vec{r}| + |(1-\lambda)\vec{q} + \lambda\vec{s})| \\
+                                      & \leq M + M = 2M.
+\end{align*}
+Hence $(1-\lambda)\vec{x} + \lambda\vec{y} \in D$, implying that $D$ is indeed also a convex set.
+\end{proof}
+\end{document}
