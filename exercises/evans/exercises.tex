@@ -1,26 +1,65 @@
 \documentclass[11pt]{article}
-%\setlength{\textwidth}{430pt}\setlength{\oddsidemargin}{11pt}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage[bottom=0.9in,top=0.9in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linktoc=all,linkcolor=blue}
 
 \begin{document}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[C]{\textbf{Exercises from Zachmanoglou \& Evans' Partial Differential Equations}}
+\fancyhead[C]{\textbf{Exercises from Evans' Partial Differential Equations}}
 \tableofcontents
 \newpage
 \setcounter{section}{4}
+
 \section{Sobolev Spaces}
 \subsection{}
 Suppose $k \in \{0,1,\dots\}$, $0 < \gamma < 1$. Prove $C^{k,\gamma}(\overline{U})$ is a Banach space.
 \begin{proof}
 In progress...
 \end{proof}
+
 \setcounter{subsection}{2}
 \subsection{}
+Denote by $U$ the open square $\{x \in \mathbb{R}^2 \, | \, |x_1| < 1, |x_2| < 1\}$. Define
+
+\[
+u(x) =
+\begin{cases} 
+	1 - x_1, & \text{if } x_1 > 0, |x_2| < x_1 \\
+	1 + x_1, & \text{if } x_1 < 0, |x_2| < -x_1 \\
+	1 - x_2, & \text{if } x_2 > 0, |x_1| < x_2 \\
+	1 + x_2, & \text{if } x_2 < 0, |x_1| < -x_2.
+\end{cases}
+\]
+For which $1 \leq p \leq \infty$ does $u$ belong to $W^{1,p}(U)$.
+\begin{proof}
+In progress...
+\end{proof}
+
+\setcounter{subsection}{4}
+\subsection{}
+Let $U$, $V$ be open sets, with $V\subset\subset U$. Show there exists a smooth function $\zeta$ such that
+$\zeta \equiv 1$ on $V$, $\zeta = 0$ near $\partial U$. (Hint: Take $V \subset\subset W \subset\subset U$ and mollify $\chi_W$.)
+\begin{proof}
+In progress...
+\end{proof}
+
+\subsection{}
+Assume $U$ is bounded and $U \subset\subset \bigcup_{i=1}^{N}V_i$. Show there exist $C^{\infty}$ functions $\zeta_i$ ($i=1,\dots,N$)
+such that
+\[
+\begin{cases}
+	0 \leq \zeta_i \leq 0, \text{ supp } \zeta_i \subset V_i \,(i=1,\dots,N)\\
+	\sum_{i=1}^{N} \zeta_i \text{ on } U.
+\end{cases}
+\]
+\begin{proof}
+In progress...
+\end{proof}
 
 \end{document}
