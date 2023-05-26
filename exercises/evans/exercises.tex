@@ -7,11 +7,14 @@
 \usepackage[bottom=0.9in,top=0.9in]{geometry}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linktoc=all,linkcolor=blue}
+\usepackage{mathtools}
+
+\newcommand{\defeq}{\vcentcolon=}
 
 \begin{document}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[C]{\textbf{Exercises from Evans' Partial Differential Equations}}
+\fancyhead[C]{\textbf{Exercises from Evans Partial Differential Equations}}
 \tableofcontents
 \newpage
 \setcounter{section}{4}
@@ -20,8 +23,44 @@
 \subsection{}
 Suppose $k \in \{0,1,\dots\}$, $0 < \gamma < 1$. Prove $C^{k,\gamma}(\overline{U})$ is a Banach space.
 \begin{proof}
-In progress...
+A Banach space is a \textit{complete normed linear space}, so we need to show that $C^{k,\gamma}(\overline{U})$
+is each of the following:
+	\begin{enumerate}[1.]
+		\item A Linear space.
+		\item A Normed linear space.
+		\item A Complete space.
+	\end{enumerate}
+Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Banach space itself.
+	\begin{enumerate}[1.]
+		\item Suppose $u,v,w \in C^{k,\gamma}(\overline{U})$ and $a,b \in \mathbb{R}$.
+			It follows that $u,v,w \in C^k(\overline{U})$ and that the H\"{o}lder norm of
+			each $u$, $v$, and $w$ is finite. With this knowledge we will loosely prove
+			the linear space axioms as follows:
+			\begin{enumerate}[(i)]
+				\item $u+v \in C^{k,\gamma}(\overline{U})$ because $\|u+v\|_{C^{k,\gamma}(\overline{U})} < \infty$,
+					which follows from the triangle inequality of norms.
+				\item $u+v = v+u$ because $u,v \in C^k(\overline{U})$, which we know is itself a linear space.
+				\item $u+(v+w) = (u+v)+w$ following the same argument as (ii).
+				\item $C^k(\overline{U}) \subset C^{k,\gamma}(\overline{U})$ implies $\exists \, \vec{0} \in C^{k,\gamma}(\overline{U})$
+					such that $u + \vec{0} = u$.
+				\item Following the same argument as (iv) we get that $\forall \, u \in C^{k,\gamma}(\overline{U}) \, \exists \, (-u)$
+					such that $u+(-u) = \vec{0}$.
+				\item $a(bu) = (ab)u$ following the same argument as (ii).
+				\item $a(u + v) = au + av$ following the same argument as (ii).
+				\item $(a+b)u = au + bu$ following the same argument as (ii).
+				\item Following the same argument as (iv) we get that $\exists \, \vec{1} \in C^{k,\gamma}(\overline{U})$
+					such that $\vec{1} \cdot u = u$.
+				\item Following the same argument as (iv) we get that $\exists \, \vec{0} \in C^{k,\gamma}(\overline{U})$
+					such that $\vec{0} \cdot u = \vec{0}$.
+			\end{enumerate}
+			These axioms prove that $C^{k,\gamma}(\overline{U})$ is indeed a linear space.
+		\newpage
+		\item 
+		\item
+	\end{enumerate}
 \end{proof}
+
+\newpage
 
 \setcounter{subsection}{2}
 \subsection{}
