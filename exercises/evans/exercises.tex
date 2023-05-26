@@ -59,7 +59,29 @@ Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Bana
 			\end{enumerate}
 			These axioms prove that $C^{k,\gamma}(\overline{U})$ is indeed a linear space.
 		\newpage
-		\item 
+		\item Using the fact that $C(\overline{U})$ is itself a normed linear space, with the norm
+			\[\|u(x)\|_{C(\overline{U})} \defeq \sup_{x \in U}{|u(x)|},\]
+			we can prove the normed linear space axioms as follows:
+			\begin{enumerate}[(i)]
+				\item Suppose $u,v \in C^{k,\gamma}(\overline{U})$ and that $\alpha$ is a fixed multi-index
+					such that $|\alpha| \leq k$. It then follows that
+					\begin{align}
+						\|u+v\|_{C^{k,\gamma}(\overline{U})} &= \sum_{|\alpha| \leq k}\|D^{\alpha}(u+v)\|_{C(\overline{U})}
+											+ \sum_{|\alpha| = k}[D^{\alpha}(u+v)]_{C^{0,\gamma}(\overline{U})} \\
+						&\leq \sum_{|\alpha| \leq k}(\|D^{\alpha}u\|_{C(\overline{U})} + \|D^{\alpha}v\|_{C(\overline{U})})
+						    + \sum_{|\alpha| = k}[D^{\alpha}(u+v)]_{C^{0,\gamma}(\overline{U})}\\
+						&\leq \sum_{|\alpha| \leq k}(\|D^{\alpha}u\|_{C(\overline{U})} + \|D^{\alpha}v\|_{C(\overline{U})})
+						    + \sum_{|\alpha| = k}([D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} + [D^{\alpha}v]_{C^{0,\gamma}(\overline{U})})\\
+						&= \sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} + \sum_{|\alpha| \leq k}\|D^{\alpha}v\|_{C(\overline{U})}
+						    + \sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}v]_{C^{0,\gamma}(\overline{U})}\\
+						&= (\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} +  \sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})})
+						    + (\sum_{|\alpha| \leq k}\|D^{\alpha}v\|_{C(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}v]_{C^{0,\gamma}(\overline{U})})\\
+					        &= \|u\|_{C^{k,\gamma}(\overline{U})} + \|v\|_{C^{k,\gamma}(\overline{U})}.
+					\end{align}
+				\item
+				\item
+				\item
+			\end{enumerate}
 		\item
 	\end{enumerate}
 \end{proof}
