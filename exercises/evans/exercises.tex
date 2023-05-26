@@ -58,7 +58,6 @@ Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Bana
 					such that $\vec{0} \cdot u = \vec{0}$.
 			\end{enumerate}
 			These axioms prove that $C^{k,\gamma}(\overline{U})$ is indeed a linear space.
-		\newpage
 		\item Using the fact that $C(\overline{U})$ is itself a normed linear space, with the norm
 			\[\|u(x)\|_{C(\overline{U})} \defeq \sup_{x \in U}{|u(x)|},\]
 			we can prove the normed linear space axioms as follows:
@@ -78,11 +77,54 @@ Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Bana
 						    + (\sum_{|\alpha| \leq k}\|D^{\alpha}v\|_{C(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}v]_{C^{0,\gamma}(\overline{U})})\\
 					        &= \|u\|_{C^{k,\gamma}(\overline{U})} + \|v\|_{C^{k,\gamma}(\overline{U})}.
 					\end{align}
-				\item
-				\item
-				\item
+				\item Suppose $m \in \mathbb{R}$, $u \in C^{k,\gamma}(\overline{U})$, and that $\alpha$ is a multi-index such that
+					$|\alpha| \leq k$. It then follows that
+					\begin{align}
+						\|mu\|_{C^{k,\gamma}(\overline{U})} &= \sum_{|\alpha| \leq k}\|mD^{\alpha}u\|_{C^k(\overline{U})}
+						                                      +\sum_{|\alpha| = k}[mD^{\alpha}u]_{C^{0,\gamma}(\overline{U})} \\
+										    &= |m|\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C^k(\overline{U})}
+						                                      +|m|\sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} \\
+										    &= |m|(\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C^k(\overline{U})}
+										      +\sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})}) \\
+										    &= |m|\|u\|_{C^{k,\gamma}(\overline{U})}.
+					\end{align}
+				\item We now want to show that $\|u\|_{C^{k,\gamma}(\overline{U})} \geq 0$, $\forall \, u \in C^{k,\gamma}(\overline{U})$.
+					So suppose $u \in C^{k,\gamma}(\overline{U})$, and from (ii) we know that
+					\[\|-u\|_{C^{k,\gamma}(\overline{U})} = \|(-1)u\|_{C^{k,\gamma}(\overline{U})} = \|u\|_{C^{k,\gamma}(\overline{U})},\]
+					which implies that
+					\begin{align*}
+						\|0\|_{C^{k,\gamma}(\overline{U})} &= \|u + (-u)\|_{C^{k,\gamma}(\overline{U})} \\
+										   &\leq \|u\|_{C^{k,\gamma}(\overline{U})} + \|-u\|_{C^{k,\gamma}(\overline{U})} \\
+										   &= \|u\|_{C^{k,\gamma}(\overline{U})} + \|u\|_{C^{k,\gamma}(\overline{U})}\\
+										   &= 2\|u\|_{C^{k,\gamma}(\overline{U})}.
+					\end{align*}
+					Since $u$ is arbitrary we can say
+					\[\|0\|_{C^{k,\gamma}(\overline{U})} \leq 2\|0\|_{C^{k,\gamma}(\overline{U})},\]
+					which further implies
+					\[0 \leq \|0\|_{C^{k,\gamma}(\overline{U})}\]
+					when we substract through by $\|0\|_{C^{k,\gamma}(\overline{U})}$. Combining inequalities from above gives us
+					\[0 \leq \|0\|_{C^{k,\gamma}(\overline{U})} \leq 2\|u\|_{C^{k,\gamma}(\overline{U})},\]
+					where dividing through by 1/2 results in
+					\[0 \leq \|u\|_{C^{k,\gamma}(\overline{U})}.\]
+				\item We finally want to show that $\|u\|_{C^{k,\gamma}(\overline{U})} = 0$ if and only if $u = 0$.
+					Firstly, suppose $u \in C^{k,\gamma}(\overline{U})$ and that $\|u\|_{C^{k,\gamma}(\overline{U})} = 0$.
+					Letting $\alpha$ be some fixed multi-index such that $|\alpha| \leq k$, it then follows that
+					\[\|u\|_{C^{k,\gamma}(\overline{U})} = \sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} = 0.\]
+					By definition we know that each $\|D^{\alpha}u\|_{C(\overline{U})} \geq 0$, and also by definition we know that
+					\[[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} = \sup_{x,y \in U, x \not= y}{\left\{\frac{|D^{\alpha}u(x) - D^{\alpha}u(y)|}{|x-y|^{\gamma}}\right\}} \geq 0.\]
+					Therefore, if $\|D^{\alpha}u\|_{C^{k,\gamma}(\overline{U})} = 0$, then it must be that each
+					$\|D^{\alpha}u\|_{C(\overline{U})} = 0$ and each $[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} = 0$.
+					This further implies from the definitions that $D^{\alpha}u = 0$ implying $u = 0$, $\forall \, x \in U$.
+					Conversely, suppose $u = 0$. Then by (ii) we can see that
+					\begin{align*}
+						\|u\|_{C^{k,\gamma}(\overline{U})} &= \|0\|_{C^{k,\gamma}(\overline{U})} \\
+										   &= \|0\cdot 0\|_{C^{k,\gamma}(\overline{U})} \\
+										   &= |0|\|0\|_{C^{k,\gamma}(\overline{U})} \\
+										   &= 0.
+					\end{align*}
 			\end{enumerate}
-		\item
+			These axioms prove that $C^{k,\gamma}(\overline{U})$ is indeed a normed linear space.
+		\item 
 	\end{enumerate}
 \end{proof}
 
