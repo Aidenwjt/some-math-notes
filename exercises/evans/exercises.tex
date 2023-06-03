@@ -124,8 +124,41 @@ Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Bana
 					\end{align*}
 			\end{enumerate}
 			These axioms prove that $C^{k,\gamma}(\overline{U})$ is indeed a normed linear space.
-		\item 
+		\item Suppose $\{u_m\}_{m=1}^{\infty}$ is a Cauchy sequence in $C^{k,\gamma}(\overline{U})$.
+            		This implies each $u_m \in C^k(\overline{U})$, and since $C^k(\overline{U})$ is a complete space,
+			then there exists $u \in C^k(\overline{U})$ such that $u_m \rightarrow u$ in $C^k(\overline{U})$, as $m \rightarrow \infty$.
+			Now if we wish to show $u \in C^{k,\gamma}(\overline{U})$, then we need to show that
+			\[\|u\|_{C^{k,\gamma}(\overline{U})} = \sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} < \infty,\]
+			where $\alpha$ is some fixed multi-index such that $|\alpha| \leq k$. 
+			$u \in C^k(\overline{U})$ implies that $D^{\alpha}u$ is uniformly continuous on bounded subsets of $U$, for all $|\alpha| \leq k$,
+			and since $U$ is a bounded open set then it follows that each $D^{\alpha}u$ is bounded, futher implying that
+			\[\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} = \sum_{|\alpha| \leq k}\sup_{x \in U}{|D^{\alpha}u(x)|} < \infty\]
+			since there is only a finite number of $k^{th}$ or less partial derivatives of $u$.
+			Now to show that each $[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})}$ is finite observe that for some fixed $x,y \in U$, where $x \not= y$, we get
+			\begin{align*}
+				\frac{|D^{\alpha}u(x) - D^{\alpha}u(y)|}{|x-y|^{\gamma}} &= \frac{|D^{\alpha}u(x) - D^{\alpha}u_m(x) + D^{\alpha}u_m(x) - D^{\alpha}u_m(y) + D^{\alpha}u_m(y) - D^{\alpha}u(y)|}{|x-y|^{\gamma}} \\
+											 &\leq \frac{|D^{\alpha}u(x) - D^{\alpha}u_m(x)|}{|x-y|^{\gamma}} + \frac{|D^{\alpha}u_m(x) - D^{\alpha}u_m(y)|}{|x-y|^{\gamma}} + \frac{|D^{\alpha}u_m(y) - D^{\alpha}u(y)|}{|x-y|^{\gamma}},
+			\end{align*}
+			where taking $m \rightarrow \infty$ makes the first and third summands disappear, and since $u_m$ is a Cauchy sequence then we can say the middle summand is bounded. This means
+			\[\frac{|D^{\alpha}u(x) - D^{\alpha}u(y)|}{|x-y|^{\gamma}} < \infty,\]
+			which implies
+			\[\sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} = \sum_{|\alpha| = k}\sup_{x,y \in U, x \not= y}{\frac{|D^{\alpha}u(x) - D^{\alpha}u(y)|}{|x-y|^{\gamma}}} < \infty\]
+			as again, there is only a finite number of $k^{th}$ partial derivatives of $u$. Then since both summations are finite, it follows that
+			$\|u\|_{C^{k,\gamma}(\overline{U})} < \infty,$
+			proving that $u \in C^{k,\gamma}(\overline{U})$. Now we need to show that $u_m \rightarrow u$ in $C^{k,\gamma}(\overline{U})$. This requires that we show
+			\[\|u_m - u\|_{C^{k,\gamma}(\overline{U})} = \sum_{|\alpha| \leq k}\|D^{\alpha}(u_m - u)\|_{C(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}(u_m - u)]_{C^{0,\gamma}(\overline{U})} < \infty.\]
+			Now since we know $u_m \rightarrow u$ in $C^k(\overline{U})$, then we could follow a similar argument as before to conclude
+			\[\sum_{|\alpha| \leq k}\|D^{\alpha}(u_m - u)\|_{C(\overline{U})} < \infty.\]
+			To show each $[D^{\alpha}(u_m - u)]_{C^{0,\gamma}(\overline{U})}$ is finite observe again that
+			\begin{align*}
+				\frac{|D^{\alpha}(u_m - u)(x) - D^{\alpha}(u_m-u)(y)|}{|x-y|^{\gamma}} &= \frac{|D^{\alpha}u_m(x) - D^{\alpha}u(x) - D^{\alpha}u_m(y) + D^{\alpha}u(y)|}{|x-y|^{\gamma}} \\
+                                                                                                       &= \lim_{n \rightarrow \infty} \frac{|(D^{\alpha}u_m(x) - D^{\alpha}u_n(x)) +(D^{\alpha}u_m(y) - D^{\alpha}u_n(y))|}{|x-y|^{\gamma}},
+			\end{align*}
+			which can be made arbitrarily small choosing $m$ large enough, since both $u_m$ and $u_n$ are Cauchy sequences. Then since Cauchy implies boundedness, we get that
+			\[\sum_{|\alpha| = k}[D^{\alpha}(u_m-u)]_{C^{0,\gamma}(\overline{U})} = < \infty.\]
+			This proves that $\|u_m - u\|_{C^{k,\gamma}(\overline{U})} < \infty$ for any $m \in \mathbb{N}$, and thus $u_m \rightarrow u$ in $C^{k,\gamma}(\overline{U})$.
 	\end{enumerate}
+	With this last proof we have shown that $C^{k,\gamma}(\overline{U})$ is indeed a complete space, which completes the proof for $C^{k,\gamma}(\overline{U})$ being a Banach space.
 \end{proof}
 
 \newpage
