@@ -5,8 +5,10 @@
 
 ## Exercises
 - Number Theory
-    - George E. Andrews' Number Theory
+    - G.E. Andrews' Number Theory
         - 1.1.1, 1.1.2, 1.1.4, 1.1.5
 - PDEs
-    - E.C. Zachmanoglou and Dale W. Thoe's Introduction to PDEs with Applications
+    - E.C. Zachmanoglou and D.W. Thoe's Introduction to PDEs with Applications
         - 1.1
+    - L.C. Evans' Partial Differential Equations
+        - 5.1
