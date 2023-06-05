@@ -64,22 +64,18 @@ Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Bana
 			\begin{enumerate}[(i)]
 				\item Suppose $u,v \in C^{k,\gamma}(\overline{U})$ and that $\alpha$ is a fixed multi-index
 					such that $|\alpha| \leq k$. It then follows that
-					\begin{align}
+					\begin{align*}
 						\|u+v\|_{C^{k,\gamma}(\overline{U})} &= \sum_{|\alpha| \leq k}\|D^{\alpha}(u+v)\|_{C(\overline{U})}
 											+ \sum_{|\alpha| = k}[D^{\alpha}(u+v)]_{C^{0,\gamma}(\overline{U})} \\
 						&\leq \sum_{|\alpha| \leq k}(\|D^{\alpha}u\|_{C(\overline{U})} + \|D^{\alpha}v\|_{C(\overline{U})})
 						    + \sum_{|\alpha| = k}[D^{\alpha}(u+v)]_{C^{0,\gamma}(\overline{U})}\\
 						&\leq \sum_{|\alpha| \leq k}(\|D^{\alpha}u\|_{C(\overline{U})} + \|D^{\alpha}v\|_{C(\overline{U})})
-						    + \sum_{|\alpha| = k}([D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} + [D^{\alpha}v]_{C^{0,\gamma}(\overline{U})})\\
-						&= \sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} + \sum_{|\alpha| \leq k}\|D^{\alpha}v\|_{C(\overline{U})}
-						    + \sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}v]_{C^{0,\gamma}(\overline{U})}\\
-						&= (\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C(\overline{U})} +  \sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})})
-						    + (\sum_{|\alpha| \leq k}\|D^{\alpha}v\|_{C(\overline{U})} + \sum_{|\alpha| = k}[D^{\alpha}v]_{C^{0,\gamma}(\overline{U})})\\
-					        &= \|u\|_{C^{k,\gamma}(\overline{U})} + \|v\|_{C^{k,\gamma}(\overline{U})}.
-					\end{align}
+						                                                    + \sum_{|\alpha| = k}([D^{\alpha}u]_{C^{0,\gamma}(\overline{U})} + [D^{\alpha}v]_{C^{0,\gamma}(\overline{U})})\\
+						&= \|u\|_{C^{k,\gamma}(\overline{U})} + \|v\|_{C^{k,\gamma}(\overline{U})}.
+					\end{align*}
 				\item Suppose $m \in \mathbb{R}$, $u \in C^{k,\gamma}(\overline{U})$, and that $\alpha$ is a multi-index such that
 					$|\alpha| \leq k$. It then follows that
-					\begin{align}
+					\begin{align*}
 						\|mu\|_{C^{k,\gamma}(\overline{U})} &= \sum_{|\alpha| \leq k}\|mD^{\alpha}u\|_{C^k(\overline{U})}
 						                                      +\sum_{|\alpha| = k}[mD^{\alpha}u]_{C^{0,\gamma}(\overline{U})} \\
 										    &= |m|\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C^k(\overline{U})}
@@ -87,7 +83,7 @@ Much of the proof will rely on the fact that we know $C(\overline{U})$ is a Bana
 										    &= |m|(\sum_{|\alpha| \leq k}\|D^{\alpha}u\|_{C^k(\overline{U})}
 										      +\sum_{|\alpha| = k}[D^{\alpha}u]_{C^{0,\gamma}(\overline{U})}) \\
 										    &= |m|\|u\|_{C^{k,\gamma}(\overline{U})}.
-					\end{align}
+					\end{align*}
 				\item We now want to show that $\|u\|_{C^{k,\gamma}(\overline{U})} \geq 0$, $\forall \, u \in C^{k,\gamma}(\overline{U})$.
 					So suppose $u \in C^{k,\gamma}(\overline{U})$, and from (ii) we know that
 					\[\|-u\|_{C^{k,\gamma}(\overline{U})} = \|(-1)u\|_{C^{k,\gamma}(\overline{U})} = \|u\|_{C^{k,\gamma}(\overline{U})},\]
