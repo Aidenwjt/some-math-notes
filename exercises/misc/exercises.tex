@@ -1,11 +1,13 @@
 \documentclass[11pt]{article}
-\setlength{\textwidth}{430pt}\setlength{\oddsidemargin}{11pt}
+%\setlength{\textwidth}{430pt}\setlength{\oddsidemargin}{11pt}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage[bottom=0.9in,top=0.9in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linktoc=all,linkcolor=blue}
 
 \begin{document}
 \pagestyle{fancy}
@@ -39,6 +41,9 @@ With this bound, let $\lambda \in \mathbb{R}$, where $0 < \lambda < 1$, and see 
 \end{align*}
 Hence $(1-\lambda)\vec{x} + \lambda\vec{y} \in D$, implying that $D$ is indeed also a convex set.
 \end{proof}
+
+\newpage
+
 \section{Calculus}
 \subsection{The Math Sorcerers Calculus Problem His Students Couldn't Solve}
 Find the equations of the tangent lines to the graph of $f(x) = x^2$ that pass through $(1,-1)$.
@@ -46,5 +51,45 @@ Find the equations of the tangent lines to the graph of $f(x) = x^2$ that pass t
 \begin{proof}[Solution]
 Work in progress...
 \end{proof}
+
+\newpage
+
+\section{Algebra}
+\subsection{Exercise Posed During Lecture}
+Simplify
+\[\frac{1}{1+a+ab} + \frac{1}{1+b+bc} + \frac{1}{1+c+ca}\]
+given that $abc=1$.
+\begin{proof}[Solution]
+Firstly, we will rearrange the first summand into
+	\begin{equation*}
+		\begin{aligned}
+			\frac{1}{1+a+ab} &= \frac{1}{abc + a + ab} \\
+			                 &= \frac{1}{a(bc + 1 + b)} \\
+					 &= \frac{1}{a(1 + b + bc)} \\
+					 &= \frac{1}{a(abc + b + bc)} \\
+					 &= \frac{1}{ab(ac + 1 + c)} \\
+					 &= \frac{1}{ab(1 + c + ca)}.
+		\end{aligned}
+	\end{equation*}
+Then similarly, we will rearrange the second summand into
+	\begin{equation*}
+		\begin{aligned}
+			\frac{1}{1+b+bc} &= \frac{1}{abc + b + bc} \\
+			                 &= \frac{1}{b(ac + 1 + c)} \\
+					 &= \frac{1}{b(1 + c + ca)}.
+		\end{aligned}
+	\end{equation*}
+Now substitute both of these back into the original equation to get
+	\begin{equation*}
+		\begin{aligned}
+			\frac{1}{1+a+ab} + \frac{1}{1+b+bc} + \frac{1}{1+c+ca} &= \frac{1}{ab(1 + c + ca)} + \frac{1}{b(1 + c + ca)} + \frac{1}{1+c+ca} \\
+									       &= \frac{1}{1+c+ca}\left(\frac{1}{ab} + \frac{1}{b} + 1\right) \\
+									       &= \frac{1}{1+c+ca}\left(\frac{1+a+ab}{ab}\right) \\
+									       &= \frac{1+a+ab}{ab+abc+a^2bc} \\
+									       &= \frac{1+a+ab}{ab+1+a} = 1.
+		\end{aligned}
+	\end{equation*}
+\end{proof}
 \renewcommand\qedsymbol{$square$}
+
 \end{document}
